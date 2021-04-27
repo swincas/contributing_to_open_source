@@ -1,9 +1,9 @@
 # Cookies 'n' Code: Contributing to Open Source  
 
 ### 2021 April 28, 
-####Centre for Astrophysics and Supercomputing (CAS), Swinburne
+#### Centre for Astrophysics and Supercomputing (CAS), Swinburne
 
-####[Brigitta Sipőcz](https://github.com/bsipocz/), DiRAC Fellow, University of Washington
+#### [Brigitta Sipőcz](https://github.com/bsipocz/), DiRAC Fellow, University of Washington
 
 
 

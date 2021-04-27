@@ -2,11 +2,11 @@
 
 ### Background
 
-A very useful skill in both astronomy and the wider software world to be able to make contributions 
+A very useful skill in both astronomy and the wider software world to be able to make contributions
 to software repositories using *pull requests* (PRs). (This is what they are called on GitHub - they go by
-other similar names in other places - e.g. *merge requests* on GitLab).  This is useful whether you 
+other similar names in other places - e.g. *merge requests* on GitLab).  This is useful whether you
 are working as part of a collaboration that is using git repositories for common code, or if you want
-to contribute to an open code base that is being developed in a git repository. 
+to contribute to an open code base that is being developed in a git repository.
 
 There are two main benefits to making contributions via pull requests:
 
@@ -16,7 +16,7 @@ There are two main benefits to making contributions via pull requests:
  many people having write-access to the main repository.
 
 In this tutorial, we will go through the process of opening a pull request, and we will also take some
-time to review each other's pull requests. We will take the example of a repository on GitHub, 
+time to review each other's pull requests. We will take the example of a repository on GitHub,
 but note that the workflow will be similar for other platforms such as GitLab and BitBucket.
 
 ### Workflow guidelines
@@ -51,7 +51,7 @@ where ``<username>`` is your GitHub username.
 Now that you have forked your repository, you can clone it to your computer using:
 
     git clone -o <username> https://github.com/<username>/contributing_to_open_source
-    
+
 Be sure to replace ``<username>`` with your GitHub username!
 
 ### 1c: Familiarize yourself with the code
@@ -61,11 +61,11 @@ Once the repository has been cloned, ``cd`` into it and check what files are ava
     cd contributing_to_open_source
     ls
 
-You should see a set of directories, with one directory per participant (ordered by last name).
-Go into the directory with your last name, e.g.:
+Under ``participants`` you should see a set of directories, with one directory per participant
+(ordered by github user name). Go into the directory with your user name, e.g.:
 
-    cd bsipocz
-    
+    cd participants/bsipocz
+
 You should now see the following files:
 
 * ``README.md``: basic documentation for some of the code
@@ -84,11 +84,11 @@ that you want to do another set of unrelated changes in the mean time. Thus it's
 changes in a dedicated branch. So before you make any changes, make a new branch with:
 
     git branch <name-of-branch>
-    
+
 You can then switch to this branch with:
 
     git checkout <name-of-branch>
-    
+
 Note that you can also write ``git checkout -b <name-of-branch>`` as a short-hand for the above two
 commands. Branch names should be kept simple and reasonably short, and can't include e.g. spaces.
 
@@ -115,20 +115,20 @@ Now that you've made changes, the next step is to commit these changes to the re
 what files have changed since the last commit with:
 
     git status
-    
+
 We now need to 'stage' files before committing them - the difference between staging and committing
 files is that staging consists of selecting which files you will want to commit changes for (you may
 want to separate the commits for changes to different files for some reason). To stage files, use
 the ``git add`` command as:
 
     git add file-to-stage
-    
+
 and repeat this for each file you want to include in the next commit. You can use ``git status``
 to check which files have been staged for committing. Once you are happy with the files that have been
 staged, you can create a commit in the repository using:
 
     git commit -m "Message describing the changes here"
-    
+
 Be sure to edit the commit message to be descriptive, so that anyone looking at the git history has
 an idea of roughly what each commit does.
 
@@ -139,14 +139,14 @@ an idea of roughly what each commit does.
 You can now check that your commit is in the history using:
 
     git log
-    
+
 If the commit is there, you are now ready to push your changes to GitHub! You can do this using:
 
     git push origin <name-of-branch>
-    
+
 If this succeeds, you are ready for the next step. If you get an error about the changes being rejected,
 ask your friendly instructors!
-    
+
 ### 1g: Open a pull request
 
 At this point, go to your fork on GitHub at ``https://github.com/<username>/pr_review_tutorial``, and
@@ -162,7 +162,7 @@ At this point, give your pull request a sensible title, and use the description 
 changes you've made, why you made them, and you can also mention if there are any unresolved issues for
  example. You can also preview the changes by scrolling down on the page.
 
-If for some reason you don't see the yellow banner (for example, if you went and did something else 
+If for some reason you don't see the yellow banner (for example, if you went and did something else
 after pushing so that it timed out), you can also make a pull request by choosing your branch from the
 drop-down menu and then choosing 'New pull request'
 
@@ -207,7 +207,7 @@ changes nor accept the pull request.
 
 If someone comments on your pull request and you decide to follow their recommendations, you can add
 new changes to the pull request without having to open a new one. To do this, just make any changes
-you need, then stage the files to change with ``git add`` as described above, then commit the changes 
+you need, then stage the files to change with ``git add`` as described above, then commit the changes
 with ``git commit`` and use ``git push`` to push the changes to your branch. The commit will then
 appear in the pull request. Once you think it's all ready, you might want to ask one of the instructors
 if they are willing to merge your PR.
@@ -220,18 +220,18 @@ may make improvements to the code after you have opened it, and you may need to 
 If this happens, you can use ``git remote`` to add the main repository as a source you can get changes from:
 
     git remote add swincas https://github.com/swincas/contributing_to_open_source
-    
-You only need to do this once for a given local repository. 
+
+You only need to do this once for a given local repository.
 
 Once you added the remote, you can do:
 
     git fetch swincas
-    
+
 to fetch the latest changes from the main repository. Note that this won't update your code - to do
 this, make sure all your changes are committed, and then use:
 
     git rebase swincas/main
-    
+
 Provided that there are no changes in the main repository that conflict, you should then be good to
 go and your local branch will contain both the latest changes from the main repository, and your local
 changes. If you previously pushed your branch to GitHub, you will then need to make sure you push

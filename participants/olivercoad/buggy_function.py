@@ -1,7 +1,6 @@
 import math
 
-
-def angle_to_sexigesimal(angle_in_degrees, decimals=3):
+def angle_to_sexigesimal(angle_in_degrees:float, decimals:int=3) -> str:
     """
     Convert the given angle to a sexigesimal string of hours of RA.
 
@@ -16,17 +15,19 @@ def angle_to_sexigesimal(angle_in_degrees, decimals=3):
         The sexigesimal string giving the hours, minutes, and seconds of RA for
         the given `angle_in_degrees`
 
+    Example
+    -------
+    angle_to_sexigesimal(48.311167,3) returns 48d 18' 40.201"
+
     """
     if math.floor(decimals) != decimals:
         raise OSError('decimals should be an integer!')
 
-    hours_num = angle_in_degrees*24/180
-    hours = math.floor(hours_num)
-
-    min_num = (hours_num - hours)*60
+    degrees = math.floor(angle_in_degrees)
+    min_num = (angle_in_degrees - degrees)*60
     minutes = math.floor(min_num)
 
     seconds = (min_num - minutes)*60
 
-    format_string = '{}:{}:{:.' + str(decimals) + 'f}'
-    return format_string.format(hours, minutes, seconds)
+    format_string = "{}d {}' {:." + str(decimals) + "f}\""
+    return format_string.format(degrees, minutes, seconds)

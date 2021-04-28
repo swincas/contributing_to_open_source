@@ -142,7 +142,7 @@ You can now check that your commit is in the history using:
 
 If the commit is there, you are now ready to push your changes to GitHub! You can do this using:
 
-    git push origin <name-of-branch>
+    git push <username> <name-of-branch>
 
 If this succeeds, you are ready for the next step. If you get an error about the changes being rejected,
 ask your friendly instructors!

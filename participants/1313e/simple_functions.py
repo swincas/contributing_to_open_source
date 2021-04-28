@@ -45,7 +45,7 @@ def is_prime(n):
         return(False)
 
     # Loop over all numbers from 2 to n-1
-    for i in range(2, n):
+    for i in range(2, int(pow(n, 0.5)+1)):
         # Check if n can be divided by this number
         if not n % i:
             # If so, return False

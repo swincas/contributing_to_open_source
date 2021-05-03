@@ -46,6 +46,9 @@ repository and click the 'Fork' button:
 This will create a copy of the repository at ``https://github.com/<username>/contributing_to_open_source``
 where ``<username>`` is your GitHub username.
 
+**Note**: if you have cloned the original repository and didn't make a fork,
+you can [switch local git repo to fork](https://gist.github.com/ElectricRCAircraftGuy/8ca9c04924ac11a50d48c2061d28b090)
+
 ### 1b: Clone your fork
 
 Now that you have forked your repository, you can clone it to your computer using:

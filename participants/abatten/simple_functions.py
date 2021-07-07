@@ -10,3 +10,15 @@ def factorial(value):
         return 1
     else:
         return value * factorial(value - 1)
+
+def is_a_prime(value):
+
+    max_quotient = math.ceil(math.sqrt(value))
+
+    for i in range(max_quotient):
+        if value % i == 0:
+            return False
+    return True
+    
+
+
